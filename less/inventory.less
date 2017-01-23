@@ -1,0 +1,94 @@
+.inventory {
+  background: @inventory-bg;
+}
+
+
+
+//
+// Inventory navs
+// --------------------------------------------------
+
+.nav-inventory {
+  margin: 0 20px 0 0;
+  padding: 0;
+  list-style-type: none;
+
+  > li {
+    float: left;
+    margin: 0 10px 0 0;
+
+    > a {
+      &,
+      &:focus {
+        display: block;
+        line-height: @inventory-height;
+        color: @inventory-link-color;
+        font-size: 12px;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: @inventory-link-hover-color;
+        text-decoration: underline;
+      }
+    }
+
+    &.active > a,
+    &.active > a:focus,
+    &.active > a:hover {
+      color: @inventory-link-active-color;
+    }
+  }
+
+  &.pull-right {
+    margin: 0 0 0 20px;
+
+    > li {
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+
+
+//
+// Social nav
+// --------------------------------------------------
+
+.nav-inventory-social {
+
+  > li {
+    margin: 0;
+
+    > a {
+      padding: 0 15px;
+      border-left: 1px solid fade(#fff, 5%);
+      color: @inventory-social-link-color;
+    }
+
+    &:last-child > a {
+      border-right: 1px solid fade(#fff, 5%);
+    }
+  }
+
+  &.pull-right {
+    margin: 0 0 0 20px;
+
+    > li {
+      margin: 0;
+    }
+  }
+}
+
+
+
+//
+// Inventory text
+// --------------------------------------------------
+
+.text-inventory {
+  margin: 0 20px 0 0;
+  line-height: @inventory-height;
+  color: @inventory-text-color;
+  float: left;
+}

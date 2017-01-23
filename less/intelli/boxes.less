@@ -1,0 +1,226 @@
+
+//
+// Boxes / blocks
+// --------------------------------------------------
+
+.box {
+
+  &--border {
+    padding: 20px;
+    border: 1px solid @border-color;
+  }
+
+  &--featured {
+    border: 1px solid @brand-info;
+    padding: @gap;
+    background: fade(@brand-info, 10%);
+  }
+
+  &--sponsored {
+    border: 1px solid @brand-warning;
+    padding: @gap;
+    background: fade(@brand-warning, 10%);
+  }
+
+  + .box,
+  + div {
+    margin-top: @vertical-rhythm;
+  }
+
+  &__caption {
+    .font-normalize(14px, 0);
+    color: @box-caption-color;
+    position: relative;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 15px 0;
+  }
+
+  &__content {
+    color: @box-content-color;
+    padding-top: @vertical-rhythm/2;
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.box--categories {
+  .box__caption {
+    background: @link-color;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 15px 20px;
+  }
+
+  .box__content {
+    background: #fff;
+    padding: 0;
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      background: #fff;
+
+      li {
+        margin: 0;
+        position: relative;
+
+        a {
+          display: block;
+          padding: 10px 20px;
+          border-bottom: 1px solid #eee;
+          position: relative;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+
+            .fa {
+              right: 15px;
+            }
+          }
+
+          .fa {
+            position: absolute;
+            right: 10px;
+            top: 12px;
+            font-size: 16px;
+            color: fade(@text-color, 50%);
+            .transition(all .15s ease-in-out);
+          }
+        }
+
+        &:last-child a {
+          border-bottom: 0;
+        }
+
+        > ul {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 220px;
+          display: none;
+          z-index: 1000;
+          .box-shadow(0 5px 50px rgba(0,0,0,.175));
+
+          &::after {
+            display: block;
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 12px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px 10px 8px 0;
+            border-color: transparent #fff transparent transparent;
+          }
+        }
+
+        &:hover > ul {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+
+//
+// Short shop info
+// --------------------------------------------------
+
+.box-short-info {
+  background: @brand-accent;
+  padding: 20px 0;
+}
+
+.b-short-info {
+  display: table;
+  width: 100%;
+
+  &__item {
+    display: table-cell;
+    width: 1%;
+    padding: 0 10px;
+    border-right: 1px solid fade(#fff, 40%);
+    text-align: center;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    .fa {
+      display: block;
+      font-size: 34px;
+      margin: 0 auto 10px;
+      color: fade(#fff, 80%);
+    }
+
+    span {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 16px;
+      color: #fff;
+    }
+
+    p {
+      margin: 0;
+      color: fade(#fff, 60%);
+    }
+  }
+}
+
+
+
+//
+// Min max toggle
+// --------------------------------------------------
+
+.collapsible {
+  position: relative;
+
+  &.collapsed {
+
+    .minmax-toggle i {
+      .fa-icon();
+      &:before { content: @fa-var-angle-down; }
+    }
+
+    .box__content,
+    > .fieldset__content {
+      display: none;
+    }
+  }
+}
+
+.minmax-toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -12px;
+  font-size: 20px;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-decoration: none;
+  text-align: center;
+  color: fade(@text-color, 30%);
+
+  i {
+    .fa-icon();
+    &:before { content: @fa-var-angle-up; }
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: fade(@text-color, 50%);
+  }
+}

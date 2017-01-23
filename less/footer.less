@@ -1,0 +1,314 @@
+.prefooter {
+  > .box {
+    margin: 0;
+  }
+}
+
+
+
+//
+// Footer blocks
+// --------------------------------------------------
+
+.footer-blocks {
+  background: @footer-bg;
+  padding: @sections-v-pad/2 0;
+}
+
+
+//
+// Footer blocks
+// --------------------------------------------------
+
+.box-footer {
+  .box__caption {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .box__content {
+    color: fade(#fff, 70%);
+  }
+
+  &--menu {
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      > li {
+        margin: 0;
+
+        > a {
+          color: fade(#fff, 80%);
+          display: block;
+          padding: 10px 20px;
+          .transition(all .15s ease-in-out);
+          // border-bottom: 1px solid fade(#fff, 5%);
+          position: relative;
+
+          &::before,
+          &::after {
+            .fa-icon();
+            display: block;
+            content: @fa-var-circle-thin;
+            position: absolute;
+            color: @brand-accent;
+            left: 0;
+            font-size: 11px;
+            top: 50%;
+            .translate(0,-50%);
+            .transition(all .15s ease-in-out);
+          }
+
+          &::after {
+            content: @fa-var-angle-right;
+            .opacity(0);
+            left: -15px;
+            font-size: 16px;
+          }
+
+          &:hover,
+          &:focus {
+            color: #fff;
+            text-decoration: none;
+          }
+
+          &:hover {
+
+            &::before {
+              .opacity(0);
+              .scale(0.1);
+            }
+
+            &::after {
+              left: 0;
+              .opacity(1);
+            }
+          }
+        }
+
+        &:last-child > a {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &--contact {
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+
+      > li {
+        margin: 0;
+        position: relative;
+        padding: 10px 0 20px 60px;
+
+        > .fa {
+          position: absolute;
+          left: 0;
+          top: 10px;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          background: @brand-accent;
+          color: #fff;
+          font-size: 20px;
+          border-radius: 3px;
+        }
+
+        span {
+          display: block;
+        }
+
+        a {
+          color: @brand-accent;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+//
+// Footer
+// --------------------------------------------------
+
+.footer {
+  background: @footer-bg;
+  border-top: 1px solid fade(#fff, 10%);
+  padding-top: 30px;
+  margin-top: 30px;
+
+  p {
+    color: @footer-text-color;
+  }
+}
+
+
+
+//
+// Footer navs
+// --------------------------------------------------
+
+.nav-footer {
+  margin: 0 0 20px;
+  padding: 0;
+  list-style-type: none;
+  // float: left;
+  .clearfix();
+
+  > li {
+    float: left;
+    margin: 0 15px 0 0;
+
+    > a {
+      &,
+      &:focus {
+        display: block;
+        color: @footer-link-color;
+        line-height: 35px;
+        text-decoration: none;
+      }
+
+      &:hover {
+        color: @footer-link-hover-color;
+        text-decoration: underline;
+      }
+    }
+
+    &.active > a,
+    &.active > a:focus,
+    &.active > a:hover {
+      color: @footer-link-active-color;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    float: none;
+  }
+}
+
+
+
+//
+// Footer social nav
+// --------------------------------------------------
+
+.nav-footer-social {
+  .clearfix();
+  float: left;
+
+  > li {
+    margin: 0;
+
+    > a {
+      padding: 0 20px 0 0;
+      color: @footer-social-link-color;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    margin-bottom: 20px;
+    margin-top: 20px;
+
+    > li {
+      margin-right: 10px;
+
+      > a {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        background: lighten(@footer-bg, 10%);
+        padding: 0;
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+
+.payment-systems {
+  text-align: right;
+}
+
+
+//
+// Footer text
+// --------------------------------------------------
+
+.copyright {
+  margin: 20px 0 0;
+  color: @footer-text-color;
+  text-align: right;
+
+  a {
+    &,
+    &:focus {
+      color: @footer-link-color;
+    }
+
+    &:hover {
+      color: @footer-link-hover-color;
+    }
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    float: none;
+  }
+}
+
+
+
+//
+// Back to top button
+// --------------------------------------------------
+
+.back-to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 40px;
+  border: 0 none;
+  background: darken(@brand-dark, 3%);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  outline: 0 none;
+  padding: 0;
+  opacity: 0;
+  visibility: hidden;
+  .transition(all .15s ease-in-out);
+
+  &:focus {
+    outline: 0 none;
+  }
+
+  &:hover {
+    background: darken(@brand-dark, 1%);
+    margin-bottom: 3px;
+  }
+
+  &.on {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  @media (max-width: @grid-float-breakpoint) {
+    bottom: 10px;
+    right: 10px;
+  }
+}

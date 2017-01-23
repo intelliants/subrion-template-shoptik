@@ -1,0 +1,68 @@
+.b-cart {
+  position: relative;
+  float: right;
+  margin-top: 43px;
+  margin-right: -15px;
+  .transition(all .15s ease-in-out);
+  
+  &__toggle {
+    display: block;
+    text-decoration: none;
+    height: 32px;
+    padding-left: 40px;
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    svg {
+      fill: @link-color;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+
+    &__count {
+      position: absolute;
+      left: 21px;
+      top: -2px;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+      color: #fff;
+      font-size: 12px;
+      text-align: center;
+      background: #faa701;
+      border-radius: 50%;
+    }
+
+    &__sum {
+      display: block;
+      line-height: 32px;
+
+      > span {
+        font-weight: bold;
+      }
+    }
+  }
+
+  &__menu {
+    padding: 40px 20px;
+    min-width: 220px;
+
+    &__empty {
+      .fa {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 15px;
+        font-size: 50px;
+        line-height: 50px;
+        color: fade(@text-color, 20%);
+      }
+
+      text-align: center;
+    }
+  }
+}
