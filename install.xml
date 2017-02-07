@@ -6,7 +6,7 @@
 	<contributor>Intelliants LLC</contributor>
 	<version>1.0.0</version>
 	<date>2017-01-23</date>
-	<compatibility>4.0</compatibility>
+	<compatibility>4.1</compatibility>
 
 	<layout>
 		<position menu="1" movable="0">account</position>
