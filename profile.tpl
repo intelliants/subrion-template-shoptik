@@ -13,23 +13,23 @@
 					{/if}
 					{if $member.phone}
 					<div class="ia-item__additional">
-						<p><span class="fa fa-phone"></span> {lang key='field_phone'}: {$member.phone}</p>
+						<p><span class="fa fa-phone"></span> {lang key='field_phone'}: {$member.phone|escape}</p>
 					</div>
 					{/if}
 				</div>
 				{if $member.facebook || $member.twitter || $member.gplus || $member.linkedin}
 					<p class="text-center">
 						{if isset($member.facebook) && $member.facebook}
-							<a href="{$member.facebook}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></a>
+							<a href="{$member.facebook|escape:'url'}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></a>
 						{/if}
 						{if isset($member.twitter) && $member.twitter}
-							<a href="{$member.twitter}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></a>
+							<a href="{$member.twitter|escape:'url'}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></a>
 						{/if}
 						{if isset($member.gplus) && $member.gplus}
-							<a href="{$member.gplus}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x fa-inverse"></i></a>
+							<a href="{$member.gplus|escape:'url'}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-google-plus fa-stack-1x fa-inverse"></i></a>
 						{/if}
 						{if isset($member.linkedin) && $member.linkedin}
-							<a href="{$member.linkedin}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></a>
+							<a href="{$member.linkedin|escape:'url'}" class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-linkedin fa-stack-1x fa-inverse"></i></a>
 						{/if}
 					</p>
 				{/if}
