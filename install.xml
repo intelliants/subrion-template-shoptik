@@ -218,6 +218,7 @@
 	<config group="template_shoptik" 
 			name="ckeditor_css"
 			type="hidden"
+			private="0"
 			description="CKEditor CSS"
 			order="5000">ckeditor.css</config>
 
